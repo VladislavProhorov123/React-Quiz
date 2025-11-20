@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function Quiz({ question, onNext }) {
+export default function Quiz({ question, onNext, time }) {
   const [selected, setSelected] = useState(null);
   const [isAnswered, setIsAnswered] = useState(false);
 
@@ -24,7 +24,16 @@ export default function Quiz({ question, onNext }) {
             : "border-transparent"
         }`}
       >
-        <h2 className="mb-6 font-medium">{question.title}</h2>
+        <div className="flex justify-between items-start mb-4">
+          <h2 className="mb-6 font-medium">{question.title}</h2>
+          <span className="text-base font-bold text-blue-600">
+            <span className="mr-1">
+              <i className="ri-time-line"></i>
+            </span>
+            {time} сек
+          </span>
+        </div>
+
         <div className="space-y-4">
           {question.options.map((option, index) => {
             let optionClasses =

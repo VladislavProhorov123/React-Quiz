@@ -24,7 +24,7 @@ export default function StartScreen({ onStart }) {
             <p className="text-purple-900 text-2xl mb-1">
               <i class="ri-time-line"></i>
             </p>
-            <p className="text-purple-950 text-xl font-bold">5:00</p>
+            <p className="text-purple-950 text-xl font-bold">2:00</p>
             <p className="font-bold text-base">Minutes</p>
           </div>
           <div className="w-[170px] bg-green-200 flex items-center flex-col p-4 rounded-lg cursor-pointer">
