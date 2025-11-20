@@ -25,7 +25,8 @@ export default function App() {
     return () => clearInterval(interval);
   }, [step]);
 
-  function goNext() {
+  function goNext(selected) {
+    setAnswers((prev) => [...prev, selected])
     if (index + 1 < QUESTIONS.length) {
       setIndex(index + 1);
     } else {
@@ -42,12 +43,13 @@ export default function App() {
             setStep("quiz");
             setIndex(0);
             setTime(120);
+            setAnswers([])
           }}
         />
       )}
       {step === "quiz" && <Quiz question={QUESTIONS[index]} onNext={goNext} time={time} />}
 
-      {step === "finish" && <FinishScreen />}
+      {step === "finish" && <FinishScreen questions={QUESTIONS} answers={answers} timeSpent={120 - time} />}
     </div>
   );
 }

@@ -67,7 +67,7 @@ export default function Quiz({ question, onNext, time }) {
               onClick={() => {
                 setIsAnswered(false);
                 setSelected(null);
-                onNext();
+                onNext(selected);
               }}
               className="bg-blue-600 text-white px-6 py-2 rounded-md cursor-pointer"
             >
