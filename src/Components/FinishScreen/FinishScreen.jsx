@@ -2,7 +2,7 @@ import React from "react";
 
 export default function FinishScreen({ questions, answers, timeSpent }) {
   const correctCount = answers.filter(
-    (a, i) => a === questions[i].answers
+    (a, i) => a === questions[i].answer
   ).length;
   return (
     <div className="min-h-screen flex flex-col items-center justify-center  bg-gray-100 p-6">
